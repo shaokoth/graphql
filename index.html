@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Graphql</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   </head>
   <body>
    <!-- Login Section -->
@@ -27,6 +29,80 @@
                 </button>
                 <div id="errorMessage" class="error-message" style="display: none;"></div>
             </form>
+        </div>
+    </div>
+     <!-- Profile Section -->
+    <div id="profileSection" class="profile-container">
+        <div class="container">
+            <div class="header glass-card">
+                <div class="user-info">
+                    <h1 id="userName">Loading...</h1>
+                    <p id="userEmail">Loading...</p>
+                </div>
+                <button class="logout-btn" onclick="logout()">Sign Out</button>
+            </div>
+
+            <div class="profile-grid">
+                <div class="profile-card glass-card">
+                    <h3> Profile Overview</h3>
+                    <div class="stat-item">
+                        <span class="stat-label">Campus</span>
+                        <span class="stat-value" id="campus">-</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Current Level</span>
+                        <span class="stat-value highlight" id="level">-</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Total Experience</span>
+                        <span class="stat-value highlight" id="totalXP">-</span>
+                    </div>
+                </div>
+
+                <div class="profile-card glass-card">
+                    <h3> Audit Performance</h3>
+                    <div class="stat-item">
+                        <span class="stat-label">Audit Ratio</span>
+                        <span class="stat-value highlight" id="auditRatio">-</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Reviews Given</span>
+                        <span class="stat-value" id="totalUp">-</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Reviews Received</span>
+                        <span class="stat-value" id="totalDown">-</span>
+                    </div>
+                </div>
+
+                <div class="profile-card glass-card">
+                    <h3> Project Progress</h3>
+                    <div class="stat-item">
+                        <span class="stat-label">Completed Projects</span>
+                        <span class="stat-value highlight" id="finishedProjects">-</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Active Projects</span>
+                        <span class="stat-value" id="currentProjects">-</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Pending Setup</span>
+                        <span class="stat-value" id="setupProjects">-</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="charts-container">
+                <div class="chart-card glass-card">
+                    <h3> Experience Progress</h3>
+                    <svg class="chart-svg" id="xpChart"></svg>
+                </div>
+
+                <div class="chart-card glass-card">
+                    <h3> Skills Radar</h3>
+                    <svg class="chart-svg" id="skillsChart"></svg>
+                </div>
+            </div>
         </div>
     </div>
   </body>
