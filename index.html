@@ -6,28 +6,28 @@
     <title>Graphql</title>
   </head>
   <body>
-    <form action="/submit-form" class="login-form" method="POST">
-      <div class="form-group">
-        <label for="username">Username or Email:</label>
-        <input
-          type="text"
-          id="username"
-          name="username"
-          placeholder="Enter username or email"
-          required
-        />
-      </div>
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          placeholder="Enter password"
-          required
-        />
-      </div>
-      <input type="submit" value="Submit" />
-    </form>
+   <!-- Login Section -->
+    <div id="loginSection" class="login-container">
+        <div class="login-card glass-card">
+            <div class="login-header">
+                <h1>Zone01</h1>
+                <p>Access your learning dashboard</p>
+            </div>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">Username or Email</label>
+                    <input type="text" id="username" placeholder="Enter your username or email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="login-btn">
+                    <span>Sign In</span>
+                </button>
+                <div id="errorMessage" class="error-message" style="display: none;"></div>
+            </form>
+        </div>
+    </div>
   </body>
 </html>
