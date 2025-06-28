@@ -527,3 +527,14 @@ function logout() {
   document.getElementById("loginForm").reset();
   document.getElementById("errorMessage").style.display = "none";
 }
+
+// Check for existing token on page load
+window.addEventListener("load", () => {
+  const savedToken = localStorage.getItem("zone01_token");
+  if (savedToken) {
+    currentToken = savedToken;
+    document.getElementById("loginSection").style.display = "none";
+    document.getElementById("loadingSection").style.display = "flex";
+    loadUserData();
+  }
+});
