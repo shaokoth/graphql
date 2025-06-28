@@ -491,3 +491,27 @@ function createSkillsChart() {
     });
   });
 }
+
+// Add tooltips to chart elements
+function addTooltips(svg, selector, contentFn) {
+  const tooltip = document.createElement("div");
+  tooltip.className = "tooltip";
+  tooltip.style.display = "none";
+  document.body.appendChild(tooltip);
+
+  svg.querySelectorAll(selector).forEach((element) => {
+    element.addEventListener("mouseenter", (e) => {
+      tooltip.innerHTML = contentFn(e.target);
+      tooltip.style.display = "block";
+    });
+
+    element.addEventListener("mousemove", (e) => {
+      tooltip.style.left = e.pageX + 15 + "px";
+      tooltip.style.top = e.pageY - 10 + "px";
+    });
+
+    element.addEventListener("mouseleave", () => {
+      tooltip.style.display = "none";
+    });
+  });
+}
