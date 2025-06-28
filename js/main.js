@@ -515,3 +515,15 @@ function addTooltips(svg, selector, contentFn) {
     });
   });
 }
+
+// Logout functionality
+function logout() {
+  currentToken = null;
+  userData = null;
+  localStorage.removeItem("zone01_token");
+
+  document.getElementById("profileSection").style.display = "none";
+  document.getElementById("loginSection").style.display = "flex";
+  document.getElementById("loginForm").reset();
+  document.getElementById("errorMessage").style.display = "none";
+}
