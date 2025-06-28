@@ -166,3 +166,27 @@ async function loadUserData() {
     logout();
   }
 }
+
+// Display user data
+function displayUserData() {
+  const user = userData;
+
+  document.getElementById(
+    "userName"
+  ).textContent = `${user.firstName} ${user.lastName} (@${user.login})`;
+  document.getElementById("userEmail").textContent = user.email;
+  document.getElementById("campus").textContent = user.campus || "N/A";
+  document.getElementById("level").textContent = user.events[0]?.level || 0;
+  document.getElementById("totalXP").textContent =
+    (user.xpTotal.aggregate.sum.amount || 0).toLocaleString() + " XP";
+  document.getElementById("auditRatio").textContent =
+    user.auditRatio?.toFixed(2) || "0.00";
+  document.getElementById("totalUp").textContent = user.totalUp || 0;
+  document.getElementById("totalDown").textContent = user.totalDown || 0;
+  document.getElementById("finishedProjects").textContent =
+    user.finished_projects.length;
+  document.getElementById("currentProjects").textContent =
+    user.current_projects.length;
+  document.getElementById("setupProjects").textContent =
+    user.setup_project.length;
+}
